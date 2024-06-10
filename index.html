@@ -5,63 +5,120 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/profile_containner.css">
 <title>Главная страница</title>
 </head>
 <body>
-<div class="container-fluid bg-header py-2">
-  <div class="row text-center">
-    <div class="col">Головна</div>
-    <div class="col">Чат</div>
-    <div class="col">Профіль</div>
+
+<!-- 
+<div class="navigation">
+  <button class="nav-button">Головна</button>
+  <button class="nav-button">Чат</button>
+  
+</div> -->
+
+<div class="navigation">
+  <div class="nav-group">
+      <button class="nav-button">Головна</button>
+      <button class="nav-button">Чат</button>
+  </div>
+  <div class="nav-group">
+    <button id="profileButton" class="nav-button" style="display: none;">Профіль</button>
+    <button id="loginButton" class="nav-button" >Увійти</button>
   </div>
 </div>
 
-<div class="container my-3">
+<!-- <div class="container my-3">
   <div class="row justify-content-center">
     <div class="col-6">
       <input type="text" class="form-control" placeholder="Пошук" aria-label="Пошук">
     </div>
+  </div> -->
+  
+
+  <div id="loginModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close" style="display: none;">&times;</span>
+        <h2>Авторизация</h2>
+        <input type="text" placeholder="login4184" name="login" id="login">
+        <input type="password" placeholder="password1" name="password" id="password">
+        <button class="authbutton" onclick="login()">Увійти</button>
+        <button class="authbutton">Реєстрація</button>
+    </div>
+</div>
+
+  <div class="mainFrame" style="display: block;">
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="">
+      <button class="search-button">Пошук</button>
+    </div>
+  
+    <div class="game-grid">
+      <a href="#" class="game-link">
+          <img src="images/dota2.png" alt="Dota 2">
+          <span>Dota 2</span>
+      </a>
+      <a href="#" class="game-link">
+          <img src="images/lol.png" alt="League of Legends">
+          <span>League of Legends</span>
+      </a>
+      <a href="#" class="game-link">
+        <img src="images/minecraft.png" alt="Minecraft">
+        <span>Minecraft</span>
+      </a>
+      <a href="#" class="game-link">
+        <img src="images/valorant.png" alt="Valorant">
+        <span>Valorant</span>
+      </a>
+      <a href="#" class="game-link">
+        <img src="images/counter_strike2.png" alt="Counter Strike 2">
+        <span>Counter Strike 2</span>
+      </a>
+      <a href="#" class="game-link">
+        <img src="images/overwatch2.png" alt="Overwatch 2">
+        <span>Overwatch 2</span>
+      </a>
+      <a href="#" class="game-link">
+        <img src="images/pubg.png" alt="PUBG">
+        <span>PUBG</span>
+      </a>
+      <a href="#" class="game-link">
+        <img src="images/fortnite.png" alt="Fortnite">
+        <span>Fortnite</span>
+      </a>
+
+  </div>
+  <div class="profileFrame" style="display: none;">
+    <div class="profile-container">
+      <div class="profile-header">
+          <h2>Загальна інформація</h2>
+      </div>
+      <div class="profile-content">
+          <div class="profile-picture">
+              <img src="user-placeholder.png" alt="User Picture">
+          </div>
+          <div class="profile-info">
+              <p><strong>Нік:</strong> Jack123</p>
+              <p><strong>Вік:</strong> 21 рік</p>
+              <p><strong>Стать:</strong> Чоловік</p>
+              <p><strong>Був онлайн:</strong> 5 годин тому</p>
+          </div>
+      </div>
+      <div class="profile-contacts">
+          <h3>Контакти</h3>
+          <button class="contact-button">Особисті повідомлення</button>
+      </div>
   </div>
 
-  <div class="game-grid">
-    <a href="#" class="game-link">
-        <img src="images/dota2.png" alt="Dota 2">
-        <span>Dota 2</span>
-    </a>
-    <a href="#" class="game-link">
-        <img src="images/lol.png" alt="League of Legends">
-        <span>League of Legends</span>
-    </a>
-    <a href="#" class="game-link">
-      <img src="images/minecraft.png" alt="League of Legends">
-      <span>Minecraft</span>
-    </a>
-    <a href="#" class="game-link">
-      <img src="images/valorant.png" alt="League of Legends">
-      <span>Valorant</span>
-    </a>
-    <a href="#" class="game-link">
-      <img src="images/counnter_strike2.png" alt="League of Legends">
-      <span>Counter Strike 2</span>
-    </a>
-    <a href="#" class="game-link">
-      <img src="images/overwatch2.png" alt="League of Legends">
-      <span>Overwatch 2</span>
-    </a>
-    <a href="#" class="game-link">
-      <img src="images/pubg.png" alt="League of Legends">
-      <span>PUBG</span>
-    </a>
-    <a href="#" class="game-link">
-      <img src="images/fortnite.png" alt="League of Legends">
-      <span>Fortnite</span>
-    </a>
-    <!-- Добавьте другие игры аналогично -->
+  </div>
+  
 </div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+
 </body>
 </html>
